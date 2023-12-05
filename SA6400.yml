@@ -1,0 +1,62 @@
+id: "SA6400"
+synoinfo: &synoinfo
+  support_disk_compatibility: "no"
+  support_memory_compatibility: "no"
+  support_bde_internal_10g: "no"
+  support_led_brightness_adjustment: "no"
+  support_oob_ctl: "no"
+  support_syno_hybrid_raid:
+  supportraidgroup:
+  maxlanport: "8"
+  netif_seq: "0 1 2 3 4 5 6 7"
+cmdline: &cmdline
+  synoboot2:
+  SMBusHddDynamicPower: 1
+  vender_format_version: 2
+  syno_ttyS0: "serial,0x3f8"
+  syno_ttyS1: "serial,0x2f8"
+patch: &patch
+  - "ramdisk-etc-rc-*.patch"
+  - "ramdisk-init-script-v5-*.patch"
+  - "ramdisk-post-init-script-*.patch"
+  - "ramdisk-disable-root-pwd-*.patch"
+platform: "epyc7002"
+unique: "synology_epyc7002_sa6400"
+serial:
+  prefix:
+    - "2270"
+  middle: "UMR"
+  suffix: "alpha"
+arc:
+  serial: "2270UMR8HWA07"
+  mac1: "9009D02A95D0"
+  mac2: "9009D02A95D1"
+  mac3: "9009D02A95D2"
+  mac4: "9009D02A95D3"
+  mac5: "9009D02A95D4"
+  mac6: "9009D02A95D5"
+  mac7: "9009D02A95D6"
+dom: -1
+disks: 16
+dt: true
+beta: false
+productvers:
+  "7.1":
+    kpre: "7.1"
+    kver: "5.10.55"
+    rd-compressed: false
+    cmdline:
+      <<: *cmdline
+    synoinfo:
+      <<: *synoinfo
+    patch: *patch
+
+  "7.2":
+    kpre: "7.2"
+    kver: "5.10.55"
+    rd-compressed: false
+    cmdline:
+      <<: *cmdline
+    synoinfo:
+      <<: *synoinfo
+    patch: *patch

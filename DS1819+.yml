@@ -1,0 +1,58 @@
+id: "DS1819+"
+synoinfo: &synoinfo
+  support_disk_compatibility: "no"
+  support_memory_compatibility: "no"
+  support_bde_internal_10g: "no"
+  support_led_brightness_adjustment: "no"
+  support_oob_ctl: "no"
+  support_syno_hybrid_raid:
+  supportraidgroup:
+  maxlanport: "8"
+  netif_seq: "0 1 2 3 4 5 6 7"
+cmdline: &cmdline
+  HddHotplug: 0
+  syno_hdd_detect: 0
+  syno_hdd_powerup_seq: 0
+  vender_format_version: 2
+  elevator: elevator
+patch: &patch
+  - "ramdisk-etc-rc-*.patch"
+  - "ramdisk-init-script-v4-*.patch"
+  - "ramdisk-post-init-script-*.patch"
+  - "ramdisk-disable-root-pwd-*.patch"
+  - "ramdisk-disable-disabled-ports-*.patch"
+platform: "denverton"
+unique: "synology_denverton_1819+"
+serial:
+  prefix:
+    - "2050"
+  middle: "R5R"
+  suffix: "alpha"
+arc:
+  serial: "2050R5RH8TVAH"
+  mac1: "001132CF8873"
+  mac2: "001132CF8874"
+  mac3: "001132CF8875"
+  mac4: "001132CF8876"
+dom: 2
+dt: false
+disks: 8
+beta: false
+productvers:
+  "7.1":
+    kver: "4.4.180"
+    rd-compressed: false
+    cmdline:
+      <<: *cmdline
+    synoinfo:
+      <<: *synoinfo
+    patch: *patch
+
+  "7.2":
+    kver: "4.4.302"
+    rd-compressed: false
+    cmdline:
+      <<: *cmdline
+    synoinfo:
+      <<: *synoinfo
+    patch: *patch
